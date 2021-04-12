@@ -27,7 +27,7 @@ const Structures = require('../util/Structures');
  * The main hub for interacting with the Discord API, and the starting point for any bot.
  * @extends {BaseClient}
  */
-class Client extends BaseClient {
+class Bot extends BaseClient {
   /**
    * @param {ClientOptions} [options] Options for the client
    */
@@ -201,7 +201,7 @@ class Client extends BaseClient {
    * @example
    * client.login('my token');
    */
-  async login(token = this.token) {
+  async start(token = this.token) {
     if (!token || typeof token !== 'string') throw new Error('TOKEN_INVALID');
     this.token = token = token.replace(/^(Bot|Bearer)\s*/i, '');
     this.emit(
